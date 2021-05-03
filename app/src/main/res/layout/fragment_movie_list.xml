@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/_5sdp"
+    android:padding="@dimen/_10sdp"
+    tools:context=".ui.lastMovies.presentation.MovieListFragment">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clTop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/txtTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10sp"
+            android:fontFamily="@font/iran_sans_mobile_bold"
+            android:text="MOVIES:"
+            android:textColor="@color/black"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/datePicker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:elevation="@dimen/_5sdp"
+            android:focusable="true"
+            app:cardCornerRadius="@dimen/_3sdp"
+            app:layout_constraintBottom_toBottomOf="@id/txtTitle"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/txtTitle">
+
+            <TextView
+                android:id="@+id/txtFilter"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorAccent"
+                android:clickable="true"
+                android:fontFamily="@font/iran_sans_mobile"
+                android:padding="@dimen/_5sdp"
+                android:text="Filter by ReleaseDate"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12sdp" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/txtSelectedReleaseDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10sp"
+            android:fontFamily="@font/iran_sans_mobile"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/_10sdp"
+            android:visibility="invisible"
+            app:layout_constraintRight_toRightOf="@id/datePicker"
+            app:layout_constraintTop_toBottomOf="@id/datePicker"
+            tools:text="@string/bottom_sheet_behavior" />
+
+        <ImageView
+            android:id="@+id/imgRemoveFilter"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:padding="@dimen/_5sdp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@id/txtSelectedReleaseDate"
+            app:layout_constraintRight_toLeftOf="@id/txtSelectedReleaseDate"
+            app:layout_constraintTop_toTopOf="@id/txtSelectedReleaseDate"
+            app:srcCompat="@drawable/ic_close"
+            app:tint="@color/gray2" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefresh"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_0sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/clTop"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="10dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:itemCount="7"
+            tools:listitem="@layout/adater_item_movie" />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Mabna</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="_1994_12_21">1994-12-21</string>
+    <string name="vote_average">Vote Average:</string>
+    <string name="_6_70">6.70</string>
+    <string name="long_text">Big Shot Big ShotBig ShotBig ShotBig ShotBig ShotBig ShotvBig ShotBig ShotBig ShotBig Shot</string>
+    <string name="name">Name:</string>
+    <string name="genre_s">Genre(s):</string>
+    <string name="budget">Budget:</string>
+    <string name="production_country_s">Production Country(s):</string>
+    <string name="original_language">Original Language:</string>
+    <string name="spoken_language_s">Spoken Language(s):</string>
+    <string name="running_time">Running Time:</string>
+    <string name="release_date">Release Date:</string>
+
+</resources>
